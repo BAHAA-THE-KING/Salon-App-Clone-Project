@@ -7,6 +7,9 @@
 ul {
   list-style: none;
 }
+a {
+  text-decoration: none;
+}
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -27,7 +30,7 @@ header {
   padding: 10px 0;
 }
 header .title {
-  font-size: 35px;
+  font-size: 32px;
   text-transform: uppercase;
   font-weight: bold;
   margin-left: 40px;
@@ -62,22 +65,22 @@ header .right .log-in:hover {
 /* Start Nav */
 .nav {
   background-color: #735384;
-  width: 20%;
-  height: calc(100% - 60.25px);
+  width: 18%;
+  height: calc(100% - 56px);
   position: absolute;
 }
 .nav .profile-img {
-  width: 200px;
-  height: 200px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   background-color: #ffffff;
   margin: 10% 0 0 15%;
   position: relative;
 }
 .nav ul {
-  margin-top: 100px;
+  margin-top: 80px;
   color: #fffffd;
-  font-size: 30px;
+  font-size: 25px;
 }
 .nav ul li {
   margin-left: 8%;
@@ -91,11 +94,15 @@ header .right .log-in:hover {
   padding-bottom: 5px;
   cursor: pointer;
 }
+/* For Seleted Page */
+.li-active {
+  background-color: #ffb27a;
+}
 .nav ul li::before {
   content: "";
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background-color: #fffffd;
   left: 0%;
@@ -110,6 +117,9 @@ header .right .log-in:hover {
 .nav ul li:hover::before {
   margin-left: 3%;
 }
+.nav ul li a {
+  color: #ffffff;
+}
 .nav .support {
   margin-left: 8%;
   transition: background-color var(--main-transition),
@@ -117,18 +127,18 @@ header .right .log-in:hover {
   position: relative;
   padding-left: 12%;
   width: 92%;
-  margin-top: 130px;
+  margin-top: 90px;
   padding-top: 5px;
   padding-bottom: 5px;
   color: #fffffd;
-  font-size: 30px;
+  font-size: 25px;
   cursor: pointer;
 }
 .nav .support::before {
   content: "";
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background-color: #fffffd;
   left: 0%;
@@ -148,10 +158,10 @@ header .right .log-in:hover {
 .info {
   width: 78%;
   display: grid;
-  margin-left: 22%;
+  margin-left: 20%;
   margin-top: 3%;
-  grid-template-columns: repeat(auto-fill, minmax(calc(78% / 4), 1fr));
-  column-gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
 }
 .info .box {
   border-radius: 20px;
@@ -170,10 +180,10 @@ header .right .log-in:hover {
 }
 .info .box .head {
   color: #31194d;
-  font-size: 45px;
+  font-size: 40px;
   font-weight: bold;
   font-family: system-ui;
-  padding: 10px 20px 0px 35px;
+  padding: 5px 10px 0px 17px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -186,14 +196,110 @@ header .right .log-in:hover {
 }
 .info .box .bottom {
   margin-bottom: 10px;
-  margin-top: 30px;
+  margin-top: 15px;
   padding-left: 15px;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 15px;
 }
 /* End Info */
 /* End First Page -1- */
 
-/* Start Log In Page */
+/* Start Second Page -2- (Reservation) */
+.table {
+  width: 78%;
+  margin-left: 20%;
+  margin-top: 10%;
+  border: 1px solid #8b8883;
+}
+.table .head {
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid #8b8883;
+}
+.table .one,
+.table .two,
+.table .three,
+.table .four {
+  display: flex;
+  width: 25%;
+  justify-content: center;
+}
+.table .one {
+  justify-content: space-between;
+  padding-left: 5px;
+}
+.table .two {
+}
+.table .three {
+  justify-content: space-between;
+}
+.table .four {
+  justify-content: flex-end;
+  padding-right: 25px;
+}
+.table .four .action {
+  width: 15px;
+  height: 15px;
+  background-color: green;
+  border-radius: 50%;
+  z-index: 10;
+  transition: color var(--main-transition);
+  cursor: pointer;
+}
+.table .four .action:hover {
+  background-color: rgb(103, 218, 103);
+}
+.table .data {
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid #8b8883;
+}
+.table .data:last-of-type {
+  border-bottom: none;
+}
+.table .data button {
+  background: transparent;
+  border: none;
+  color: rgb(126, 38, 38);
+  margin-left: 10px;
+  cursor: pointer;
+  transition: color var(--main-transition);
+}
+.table .data button:hover {
+  background: transparent;
+  border: none;
+  color: red;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.closed {
+  visibility: hidden;
+}
+.table form {
+  position: absolute;
+  right: 8%;
+  background-color: #cccccc;
+  padding: 5px;
+  border-radius: 5px;
+}
+.table .data form input[type="checkbox"]{
+  width: 1.15em;
+  height: 1.15em;
+  border: 1.15em solid green;
+  margin-right: 5px;
+}
+/* End Second Page -2- (Reservation) */
 
-/* End Log In Page */
+/* Start Third Page -3- (Salon) */
+.name-of-service {
+  
+}
+.name-of-service .top,
+.name-of-service .bottom {
+
+}
+.name-of-service .top div,
+.name-of-service .bottom div {
+
+}
+/* End Third Page -3- (Salon) */
